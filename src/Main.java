@@ -93,7 +93,7 @@ public class Main {
         return String.format("%-" + n + "s", s);
     }
     public static void main(String[] args) {
-        String caminhoArquivo = "C:/Users/Isabelle Cristina/Documents/analise/src/cod.txt";
+        String caminhoArquivo = "caminho do cod.txt";
         lerArquivoTXT(caminhoArquivo);
         IniciarPalavrasReservadas();
 
