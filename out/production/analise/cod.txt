@@ -1,6 +1,4 @@
-Pizza THAT
-hasTopping SOME MozzarellaTopping AND
-hasTopping SOME TomatoTopping AND
-hasTopping ONLY (MozzarellaTopping OR
-TomatoTopping OR
-PepperonniTopping)
+PizzaTopping AND
+CheeseTopping THAT
+hasSpiciness SOME Mild
+and hasCountryOfOrigin VALUE Italy
