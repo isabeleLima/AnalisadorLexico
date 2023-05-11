@@ -18,7 +18,7 @@ Contents
 <!--ts-->
    * [💡 O que é um Analisador Lexico?](#question)
    * [🛠 OWL e Manchester Syntax](#OWL)
-   * [🗂  Implementação ](#implementation )
+   * [🗂  Implementação ](#implementation)
    * [👨‍💻 Authors](#authors)
 <!--te-->
 </br>
@@ -57,21 +57,39 @@ declarações avulsas. Um motor de inferência (reasoner) lê essas declaraçõe
 relações implícitas que poderiam conectar ainda mais os conceitos de uma ontologia. 
 
 
-<h2 id="implementation">🗂 Architecture</h2>
+<h2 id="implementation">🗂 Implementação</h2>
 Nosso analisador lexico tem com objetivo o reconhecimento de tokens da linguagem OWL2 (Web Ontology
 Language) no formato Manchester Syntax. O programa é feito em java e utiliza de REGEX para reconhecer os tokens e seus determinados tipos.
 
 
 </br>
 
-<h2 id="authors">👨‍💻 Authors</h2>
+<h2 id="authors">👨‍💻 Autores</h2>
 
 <table>
   <tr>
+	<td align="center">
+	      <a href="https://github.com/Rigobertto">
+		<img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/54067766?v=4" width="100px;" alt=""/>
+		<br /><sub><b>👩‍💻 Rigoberto</b></sub>
+	      </a>
+	</td>
     <td align="center">
       <a href="https://github.com/isabeleLima">
         <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/58983203?v=4" width="100px;" alt=""/>
         <br /><sub><b>👩‍💻 Isabele Cristina</b></sub>
+      </a>
+    </td>
+	<td align="center">
+	      <a href="https://github.com/KennedyEduRG">
+		<img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/112023497?v=4" width="100px;" alt=""/>
+		<br /><sub><b>👩‍💻 Kennedy</b></sub>
+	      </a>
+	    </td>
+	<td align="center">
+      <a href="https://github.com/pslayne">
+        <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/58180438?v=4" width="100px;" alt=""/>
+        <br /><sub><b>👩‍💻 Layne</b></sub>
       </a>
     </td>
   </tr>
