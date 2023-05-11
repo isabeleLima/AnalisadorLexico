@@ -1,25 +1,26 @@
 <h1 align="center">
 
-Analisador Lexico
+Analisador Léxico
 
 </h1>
 
 <p align="center">
-  Implementação de um analisador Lexico em java
+  Implementação de um Analisador Léxico para reconhecimento de tokens da linguagem OWL2 (Web Ontology Language) no formato Manchester Syntax.
 </p>
 
 <h4 align="center">
-	🖥️:&nbsp; Compiladores 🖥️: </br>
+	🖥️&nbsp; Compiladores 🖥️ </br>
 </h4>
 
 
-Contents
+Sumario
 =================
 <!--ts-->
    * [💡 O que é um Analisador Lexico?](#question)
    * [🛠 OWL e Manchester Syntax](#OWL)
-   * [🗂  Implementação ](#implementation)
-   * [👨‍💻 Authors](#authors)
+   * [:gear:  Implementação ](#implementation)
+   * [:memo: Funções ](#function)
+   * [👨‍💻 Autores](#authors)
 <!--te-->
 </br>
 <h2 id="question">💡 O que é um Analisador Lexico?</h2>
@@ -57,11 +58,35 @@ declarações avulsas. Um motor de inferência (reasoner) lê essas declaraçõe
 relações implícitas que poderiam conectar ainda mais os conceitos de uma ontologia. 
 
 
-<h2 id="implementation">🗂 Implementação</h2>
+<h2 id="implementation">:gear: Implementação</h2>
 Nosso analisador lexico tem com objetivo o reconhecimento de tokens da linguagem OWL2 (Web Ontology
 Language) no formato Manchester Syntax. O programa é feito em java e utiliza de REGEX para reconhecer os tokens e seus determinados tipos.
 
 
+</br>
+
+<h2 id="function">:memo: Funções</h2>
+Resumo das funções utilizadas na implementação:
+
+- <h3>iniciarPalavrasReservadas</h3>
+Primeira Função do arquivo que inicial o vetor de palavras reservadas sendo elas:
+
+  - SOME
+  - ALL
+  - VALUE
+  - MIN
+  - MAX
+  - EXACTLY
+  - NOT 
+  - AND
+  - OR 
+
+- <h3>readFile</h3>
+Essa função recebe um path para um arquivo txt contendo a ontologia em formato Manchester Synta, lê as linhas do arquivo separando os tokens e os armazenando em um array
+- <h3>returnType</h3>
+Retorna o tipo do token (PALAVRA RESERVADA, CLASSE, PROPRIEDADE, NUMERO OU DESCONHECIDO) baseado na alise de REGEX
+- <h3>drawTable e padRight</h3>
+Funções para desenhar a tabela de tokens e tipos no terminal para melhor vizualização.
 </br>
 
 <h2 id="authors">👨‍💻 Autores</h2>
