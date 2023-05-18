@@ -7,10 +7,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
             //inicia a classe LexicalAnalyzer e recebe o arquivo txt com o cod
-            LexicalAnalyzer lexical = new LexicalAnalyzer();
-
-            String FilePath = "C:/Users/Isabelle Cristina/Documents/Semestre6/compiladores/AnalisadorLexico/src/cod.txt";
-            lexical.readFile(FilePath);
+            String FilePath = "C://Users//Usuario//Desktop//materiais de aula//UFERSA - CC//8º semestre//Compiladores//AnalisadorLexico//src//cod.txt";
+            LexicalAnalyzer.readFile(FilePath);
 
 
             //Lista para impressão da tabela no terminal
@@ -24,15 +22,15 @@ public class Main {
 
 
             //foreach que percorre o arrayListString que contem todas as palavras do txt cria uma nova linha com o token e o tipo e adiciona na tabela
-            for (String elemento : lexical.arrayListString) {
+            for (String elemento : LexicalAnalyzer.arrayListString) {
                 List<String> row = new ArrayList<>();
 
                 row.add(elemento);//token
-                row.add(lexical.returnType(elemento));//tipo do token
+                row.add(LexicalAnalyzer.returnType(elemento));//tipo do token
 
                 dataForTable.add(row);
             }
             //desenha a tabela
-            lexical.drawTable(dataForTable);
+            LexicalAnalyzer.drawTable(dataForTable);
     }
 }
