@@ -16,11 +16,17 @@ public class LexicalAnalyzer {
     //Reconhece propriedades que começam com has seguidos por letra maiuscula ex: hasOnion
     static String isRegex ="^is[A-Z][czA-Z0-9]*$";
     //Reconhece propriedades que Começam com is seguidos por letra maiuscula ex: isSpice
+
+    static String isCaracter ="[\\(\\)>=<=]|==|>";
+    //Reconhece simbolos com ( ) >= <= == > <;
     static ArrayList<String> palavrasReservadas = new ArrayList<>();
     //Array das palavras reservadas da linguagem
+
+
     public static void iniciarPalavrasReservadas(){
         //Função para iniciar o array de palavras reservadas com os valores da linguagem
         palavrasReservadas.add("some");
+        palavrasReservadas.add("only");
         palavrasReservadas.add("all");
         palavrasReservadas.add("value");
         palavrasReservadas.add("min");
@@ -55,10 +61,10 @@ public class LexicalAnalyzer {
             return "CLASSE";
         }else if(palavra.matches(numeroRegex)){
             return "NUMERO";
-        }else if (palavra.matches(hasRegex)){
-            return "PROPRIEDADE";
         }else if (palavra.matches(hasRegex) || palavra.matches(isRegex)){
             return "PROPRIEDADE";
+        }else if (palavra.matches(isCaracter) ){
+            return "SIMBOLO";
         }
         return "DESCONHECIDO";
     }
