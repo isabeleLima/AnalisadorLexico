@@ -17,8 +17,11 @@ public class LexicalAnalyzer {
     static String isRegex ="^is[A-Z][czA-Z0-9]*$";
     //Reconhece propriedades que Começam com is seguidos por letra maiuscula ex: isSpice
 
-    static String isCaracter ="[\\(\\)>=<=]|==|>";
+    static String isRelop ="(<=?)|(>=?)|(==)|(!=)";
     //Reconhece simbolos com ( ) >= <= == > <;
+
+
+
     static ArrayList<String> palavrasReservadas = new ArrayList<>();
     //Array das palavras reservadas da linguagem
 
@@ -45,7 +48,7 @@ public class LexicalAnalyzer {
             while ((linha = br.readLine()) != null) {
                 String[] vetorPalavras = linha.split(" ");
                 for (String palavra : vetorPalavras) {
-                    arrayListString.add(palavra);
+                    if(!palavra.equals("")) arrayListString.add(palavra);
                 }
             }
         } catch (IOException e) {
@@ -55,16 +58,34 @@ public class LexicalAnalyzer {
 
     public static String returnType(String palavra){
         //Função que retorna o tipo da palavra baseada no regex
-        if (palavrasReservadas.contains(palavra.toLowerCase())){
+        if(palavra.toLowerCase().equals("and")) {
+            return "AND";
+        } else if(palavra.toLowerCase().equals("or")) {
+            return "OR";
+        } else if(palavra.toLowerCase().equals("value") || palavra.toLowerCase().equals("integer")) {
+            return "VALUE"; //indica que o próximo valor precisa ser um número
+        } else if(palavra.toLowerCase().equals("min") || palavra.toLowerCase().equals("max")) {
+            return "COMPARAÇÃO";
+        } else if (palavrasReservadas.contains(palavra.toLowerCase())){
             return "PALAVRA RESERVADA";
-        }else if(palavra.matches(classeRegex) || palavra.matches(classeUnderRegex)){
+        } else if(palavra.matches(classeRegex) || palavra.matches(classeUnderRegex)){
             return "CLASSE";
-        }else if(palavra.matches(numeroRegex)){
+        } else if(palavra.matches(numeroRegex)){
             return "NUMERO";
-        }else if (palavra.matches(hasRegex) || palavra.matches(isRegex)){
+        } else if (palavra.matches(hasRegex) || palavra.matches(isRegex)){
             return "PROPRIEDADE";
-        }else if (palavra.matches(isCaracter) ){
-            return "SIMBOLO";
+        } else if(palavra.toLowerCase().equals("value")) {
+            return "VALUE";
+        } else if(palavra.equals("(")) {
+            return "(";
+        } else if(palavra.equals(")")) {
+            return ")";
+        } else if(palavra.equals("[")) {
+            return "[";
+        } else if(palavra.equals("]")) {
+            return "]";
+        } else if (palavra.matches(isRelop) ){
+            return "OPERADOR RELACIONAL";
         }
         return "DESCONHECIDO";
     }

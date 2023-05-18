@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
             //inicia a classe LexicalAnalyzer e recebe o arquivo txt com o cod
-            String FilePath = "C://Users//Usuario//Desktop//materiais de aula//UFERSA - CC//8º semestre//Compiladores//AnalisadorLexico//src//cod.txt";
+            String FilePath = "C://Users//Usuario//Desktop//materiais de aula//UFERSA - CC//8º semestre//Compiladores//3//Pizza_Ontology_Test_File.txt";
             LexicalAnalyzer.readFile(FilePath);
 
 
@@ -31,6 +31,12 @@ public class Main {
                 dataForTable.add(row);
             }
             //desenha a tabela
-            LexicalAnalyzer.drawTable(dataForTable);
+            //LexicalAnalyzer.drawTable(dataForTable);
+
+            for (String elemento : LexicalAnalyzer.arrayListString) {
+                
+                System.out.println(LexicalAnalyzer.returnType(elemento));
+
+            }
     }
 }
