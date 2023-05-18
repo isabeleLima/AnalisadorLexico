@@ -19,9 +19,6 @@ public class LexicalAnalyzer {
 
     static String isRelop ="(<=?)|(>=?)|(==)|(!=)";
     //Reconhece simbolos com ( ) >= <= == > <;
-
-
-
     static ArrayList<String> palavrasReservadas = new ArrayList<>();
     //Array das palavras reservadas da linguagem
 
@@ -48,7 +45,7 @@ public class LexicalAnalyzer {
             while ((linha = br.readLine()) != null) {
                 String[] vetorPalavras = linha.split(" ");
                 for (String palavra : vetorPalavras) {
-                    if(!palavra.equals("")) arrayListString.add(palavra);
+                    arrayListString.add(palavra);
                 }
             }
         } catch (IOException e) {
@@ -84,6 +81,10 @@ public class LexicalAnalyzer {
             return "[";
         } else if(palavra.equals("]")) {
             return "]";
+        }else if(palavra.equals("{")){
+            return "{";
+        }else if(palavra.equals("}")){
+            return "}";
         } else if (palavra.matches(isRelop) ){
             return "OPERADOR RELACIONAL";
         }
